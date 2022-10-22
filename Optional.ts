@@ -29,7 +29,7 @@ function easyEmail(user:User):string {
 
 // Optional callback
 
-const doStuff = (x:number,y:number, callback?:()=> void) {
+const doStuff = (x:number,y:number, callback?:()=> void) => {
   console.log([x,y])
-  callback?.() // ! could do if statement but have nicer way
+  callback?.() //!  could do if statement but have nicer way
 }
