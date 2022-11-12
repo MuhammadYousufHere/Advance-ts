@@ -1,4 +1,4 @@
-import { timing } from './decorators'
+import { timing, logTiming } from './decorators'
 
 // only used for classes
 
@@ -11,7 +11,7 @@ const delay = <T>(time: number, data: T): Promise<T> => {
   })
 }
 
-
+@logTiming
 class Users {
   @timing()
   async getUsers() {
@@ -32,5 +32,6 @@ class Users {
   console.log(`Got user: ${JSON.stringify(user)}`)
   await users.getUser(3)
   await users.getUser(2)
-
+  // @ts-ignore
+  console.log(users.__timing)
 })()
