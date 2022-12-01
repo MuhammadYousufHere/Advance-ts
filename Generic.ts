@@ -68,3 +68,14 @@ const person: Person[] = [
 ]
 
 console.log(ranker(person, ({ yearOfExp }) => yearOfExp))
+
+//new generic example
+
+function fill<IDontKnow>(array: any[], value: IDontKnow): IDontKnow[] {
+  return array.map(() => value)
+}
+console.clear()
+const res = fill([1, 2, 4, 5], 'X')
+const RES = fill(['a', 'b', 'c', 'd'], 5)
+console.log(res.map(c => c.startsWith('5')))
+console.log(RES.map(v => v))
